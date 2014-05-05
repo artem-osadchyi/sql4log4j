@@ -8,13 +8,19 @@ pattern
 :
 	(
 		expression
-		| LITERAL
+		| literal
 	)+
 ;
 
 expression
 :
 	ESC format_modifier? conversion_character precision_specifier?
+;
+
+literal
+:
+	LITERAL+
+	| .+?
 ;
 
 format_modifier
